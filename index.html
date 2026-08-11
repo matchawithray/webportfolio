@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raymart Barberan Baylon | Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+            --black: #0c0907;
+            --black-soft: #130d0a;
+            --brown: #28150d;
+            --brown-light: #351b10;
+
+            --cream: #f3e5d5;
+            --cream-soft: #d9c4ae;
+            --gold: #d3ad81;
+            --gold-light: #e0bd92;
+
+            --text: #f5eee7;
+            --text-muted: #a99b91;
+
+            --border: rgba(221, 189, 150, 0.25);
+
+            --container: 1180px;
+
+            --serif: "Playfair Display", Georgia, serif;
+            --sans: "DM Sans", Arial, sans-serif;
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--brown);
+            color: var(--text);
+            font-family: var(--sans);
+            line-height: 1.6;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        .container {
+            width: min(var(--container), calc(100% - 100px));
+            margin: auto;
+        }
+
+        .section {
+            padding: 110px 0;
+        }
+
+        .section-label,
+        .eyebrow {
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .header {
+            height: 82px;
+            background: var(--black);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .nav-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 42px;
+            height: 42px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+        }
+
+        .logo-star {
+            position: absolute;
+            font-size: 43px;
+            line-height: 1;
+        }
+
+        .logo-camera {
+            font-size: 13px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .navigation a {
+            color: #c8c0ba;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .navigation a:hover {
+            color: var(--gold);
+        }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 720px;
+            padding-top: 82px;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 5, 3, 0.96) 0%,
+                    rgba(15, 8, 5, 0.86) 35%,
+                    rgba(15, 8, 5, 0.35) 70%,
+                    rgba(8, 5, 3, 0.82) 100%
+                ),
+                url("hero.jpg") center right / cover no-repeat;
+
+            background-color: var(--black);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 65% 45%,
+                    transparent 0%,
+                    rgba(0, 0, 0, 0.15) 45%,
+                    rgba(0, 0, 0, 0.55) 100%
+                );
+
+            pointer-events: none;
+        }
+
+        .hero-container {
+            min-height: 545px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            width: 65%;
+            padding-top: 15px;
+        }
+
+        .hero-content h1 {
+            font-family: var(--serif);
+            font-size: clamp(52px, 5vw, 72px);
+            font-weight: 400;
+            line-height: 1.05;
+            color: var(--gold-light);
+            margin: 27px 0;
+        }
+
+        .hero-subtitle {
+            font-size: 15px;
+            color: #e0d8d2;
+            margin-bottom: 30px;
+        }
+
+
+        /* Buttons */
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+        }
+
+        .button {
+            min-height: 48px;
+            padding: 0 27px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: all 0.3s ease;
+        }
+
+        .button-primary {
+            background: var(--gold);
+            color: #24140d;
+        }
+
+        .button-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            border: 1px solid rgba(216, 180, 141, 0.7);
+            color: var(--gold-light);
+        }
+
+        .button-outline:hover {
+            background: var(--gold);
+            color: #20120c;
+        }
+
+
+        /* Hero stats */
+
+        .hero-stats {
+            position: absolute;
+            right: 0;
+            top: 90px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 34px;
+        }
+
+        .stat {
+            width: 110px;
+            text-align: center;
+        }
+
+        .stat-icon {
+            width: 53px;
+            height: 53px;
+            margin: auto auto 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            color: var(--gold);
+            font-size: 20px;
+        }
+
+        .stat strong {
+            display: block;
+
+            font-family: var(--serif);
+            font-size: 27px;
+            font-weight: 400;
+
+            color: #fff;
+        }
+
+        .stat span {
+            display: block;
+            margin-top: 8px;
+
+            color: #a69b94;
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           HERO CONTACT
+        ===================================================== */
+
+        .hero-bottom {
+            position: relative;
+            z-index: 3;
+
+            display: flex;
+            align-items: center;
+
+            gap: 80px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .round-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.06);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--gold);
+            font-size: 17px;
+        }
+
+        .contact-card h4 {
+            font-size: 9px;
+            letter-spacing: 1.8px;
+            margin-bottom: 4px;
+        }
+
+        .contact-card a {
+            display: block;
+
+            color: #a99d95;
+            font-size: 12px;
+
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .contact-card a:hover {
+            color: var(--gold);
+        }
+
+
+        /* Social */
+
+        .socials {
+            margin-left: auto;
+
+            display: flex;
+            gap: 27px;
+        }
+
+        .socials a {
+            font-size: 22px;
+            color: #fff;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .socials a:hover {
+            color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+            background: var(--brown);
+        }
+
+        .about-grid {
+            margin-top: 43px;
+
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 45px;
+
+            padding-bottom: 55px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about-image {
+            height: 560px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            height: 100%;
+            transition: transform 0.7s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-content {
+            padding-top: 10px;
+        }
+
+        .about-content h2 {
+            font-family: var(--serif);
+            font-size: 21px;
+            line-height: 1.2;
+            font-weight: 400;
+            color: #f2e9df;
+            margin-bottom: 22px;
+        }
+
+        .about-content > p {
+            color: #9e9188;
+            font-size: 13px;
+            line-height: 1.55;
+            margin-bottom: 22px;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 35px 0;
+        }
+
+
+        /* Awards */
+
+        .awards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .award {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .award span {
+            color: var(--gold);
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .award p {
+            color: #b6a9a0;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+
+        /* =====================================================
+           DARK SECTIONS
+        ===================================================== */
+
+        .dark-section {
+            background: var(--black);
+            padding: 110px 0;
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            color: var(--gold-light);
+            font-size: 45px;
+            font-weight: 400;
+            margin: 15px 0 45px;
+        }
+
+
+        /* =====================================================
+           FILMOGRAPHY
+        ===================================================== */
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .work-card {
+            background: #160e0a;
+            transition: transform 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .work-image {
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work-image img {
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .work-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .play-button {
+            width: 55px;
+            height: 55px;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            background: var(--gold);
+
+            color: var(--black);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            opacity: 0.9;
+        }
+
+        .work-info {
+            padding: 22px;
+        }
+
+        .work-info span {
+            color: var(--gold);
+            font-size: 9px;
+            letter-spacing: 1.5px;
+        }
+
+        .work-info h3 {
+            font-family: var(--serif);
+            font-size: 23px;
+            font-weight: 400;
+            margin-top: 7px;
+        }
+
+
+        /* =====================================================
+           THEATER
+        ===================================================== */
+
+        .theater {
+            background: #321a10;
+        }
+
+        .theater-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+                        align-items: center;
+        }
+
+        .theater h2 {
+            font-family: var(--serif);
+            color: var(--gold-light);
+            font-weight: 400;
+            font-size: clamp(40px, 4vw, 58px);
+            line-height: 1.1;
+            margin-top: 20px;
+        }
+
+        .theater-text p {
+            color: #b9aaa0;
+            max-width: 470px;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .text-link {
+            color: var(--gold);
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .text-link:hover {
+            color: white;
+        }
+
+
+        /* =====================================================
+           REVIEWS
+        ===================================================== */
+
+        .review {
+            max-width: 850px;
+            margin: 50px auto 0;
+            text-align: center;
+        }
+
+        .quote-mark {
+            font-family: var(--serif);
+            font-size: 80px;
+            color: var(--gold);
+            height: 55px;
+        }
+
+        blockquote {
+            font-family: var(--serif);
+            font-size: clamp(25px, 3vw, 38px);
+            line-height: 1.3;
+            color: #f0e7df;
+        }
+
+        .review p {
+            color: var(--gold);
+            font-size: 12px;
+            margin-top: 25px;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+            background: var(--brown);
+        }
+
+        .contact-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .contact h2 {
+            font-family: var(--serif);
+            font-size: clamp(40px, 4vw, 57px);
+            line-height: 1.05;
+            font-weight: 400;
+            color: var(--gold-light);
+            max-width: 650px;
+            margin-top: 20px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: var(--black);
+            border-top: 1px solid var(--border);
+            padding: 30px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-content p {
+            color: #756b65;
+            font-size: 11px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-socials a {
+            color: #9c918a;
+        }
+
+        .footer-socials a:hover {
+            color: var(--gold);
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .container {
+                width: min(90%, var(--container));
+            }
+
+            .hero-content {
+                width: 70%;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 600px;
+            }
+
+            .work-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .theater-grid {
+                gap: 50px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 760px) {
+
+            .header {
+                height: 70px;
+            }
+
+            .navigation {
+                display: none;
+
+                position: absolute;
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                padding: 25px;
+
+                background: #0c0907;
+
+                flex-direction: column;
+                align-items: flex-start;
+
+                border-top: 1px solid var(--border);
+            }
+
+            .navigation.active {
+                display: flex;
+            }
+
+            .navigation a {
+                font-size: 11px;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+
+            /* Hero */
+
+            .hero {
+                min-height: auto;
+                padding: 130px 0 45px;
+
+                background-position: 62% center;
+            }
+
+            .hero-container {
+                min-height: auto;
+            }
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: clamp(43px, 10vw, 65px);
+            }
+
+            .hero-stats {
+                display: none;
+            }
+
+            .hero-bottom {
+                margin-top: 80px;
+                flex-wrap: wrap;
+            }
+
+            .contact-card {
+                width: 100%;
+            }
+
+            .socials {
+                margin-left: 0;
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+
+            /* Sections */
+
+            .section,
+            .dark-section {
+                padding: 75px 0;
+            }
+
+            .about-image {
+                height: 500px;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-image {
+                height: 420px;
+            }
+
+            .theater-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 480px) {
+
+            .container {
+                width: calc(100% - 40px);
+            }
+
+            .hero {
+                background-position: 65% center;
+            }
+
+            .hero-content h1 {
+                font-size: 43px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .hero-bottom {
+                margin-top: 60px;
+            }
+
+            .about-image {
+                height: 430px;
+            }
+
+            .about-content h2 {
+                font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+
+            .work-image {
+                height: 350px;
+            }
+
+            .theater h2 {
+                font-size: 42px;
+            }
+
+            .contact h2 {
+                font-size: 42px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header"
+        id="header">
+
+        <div class="container nav-container">
+
+            <a href="#" class="logo">
+                <span class="logo-star">✦</span>
+
+                <span class="logo-camera">
+                    <i class="fa-solid fa-video"></i>
+                </span>
+            </a>
+
+
+            <nav class="navigation">
+
+                <a href="#about">ABOUT ME</a>
+                <a href="#skills">SKILLS</a>
+                <a href="#background">EDUCATIONAL BACKGROUND</a>
+                <a href="#objectives">PERSONAL OBJECTIVES</a>
+                <a href="#contact">CONTACTS</a>
+
+            </nav>
+
+
+            <button class="menu-button">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-container container">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    | Raymart Barberan Baylon |
+                </div>
+
+                <h1>
+                    MY PORTFOLIO<br> IN
+                    IT ELECTIVE 1
+                </h1>
+
+                <p class="hero-subtitle">
+                    Activity 1
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#skills"
+                       class="button button-primary">
+
+                        <i class="fa-solid fa-play"></i>
+
+                        Gallery
+
+                    </a>
+
+
+                    <a href="#contact"
+                       class="button button-outline">
+
+                        Contact Me
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Statistics -->
+
+            <div class="hero-stats">
+
+                <div class="stat">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-film"></i>
+                    </div>
+
+                    <strong>10+</strong>
+
+                    <span>
+                        years of acting
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>12</strong>
+
+                    <span>
+                        nominations
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Contact information -->
+
+        
+
+            <!-- Social media -->
+
+            <div class="socials">
+
+                <a href="https://www.instagram.com/kzxa.kei?igsh=MXY0ajc2MXJpODFuag==" target="_blank" rel="noopener noreferrer nofollow">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.facebook.com/share/1BmWntStGy/" target="_blank" rel="noopener noreferrer nofollow">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@matchawithrai?_r=1&_t=ZS-98mzWzI07nR" target="_blank" rel="noopener noreferrer nofollow">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+
+                
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about section" id="about">
+
+        <div class="container">
+
+            <div class="section-label">
+                | ABOUT ME |
+            </div>
+
+
+            <div class="about-grid">
+
+                <div class="about-image">
+
+                    <img
+                        src="rairai.jpg"
+                        alt="Portrait of Rai Rai"
+                    >
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <h2>
+                        Hi everyone👋🏻
+                         <br>      I'm Raymart Barberan Baylon a third year IT student in Mabalacat City College
+                     . a happy, cheerful, and a loving person you'll ever know
+                    </h2>
+
+
+                    <p>I was born and raised in PH, i was half spanish from my lolo's bloodline. I've been living for about 20 years and my birthday is September 01, 2005. currently living in Bical Mabalacat Pampanga. and we came from Legazpi, Albay.
+                    </p>
+
+
+                    <p>
+                        When I am not studying, you can usually find me Cycling. I first fell in love with this activity because i can go wherever i want. and it was fun to have friends who ride with you so you don't get bored along the road, and it remains my favorite way to unwind. Lately, I have also taken up playing video games , with the current goal of playing in esports specially in campus events. these hobbies keep me  happy even when life falls apart.
+                    </p>
+
+
+                   
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section class="dark-section" id="skills">
+
+        <div class="container">
+
+            <div class="section-label">
+                | SKILLS |
+            </div>
+
+            <h2 class="section-title">
+                MY SKILLS
+            </h2>
+
+
+            <div class="work-grid">
+
+                <article class="work-card">
+
+                    <div class="work-image">
+
+                        <img
+                            src="pipecleaner.jpg"
+                            alt=" Christmas Parol"
+                        >
+                        
+
+                        
+
+                    </div>
+
+                    <div class="work-info">
+
+                        <span>
+                            2025 · HANDMADE
+                        </span>
+
+                        <h3>
+                            Handmade using Pipecleaner(fuzzywire)
+                        </h3>
+
+                    </div>
+
+                </article>
+
+
+                <article class="work-card">
+
+                    <div class="work-image">
+
+                        <img
+                            src="sunflower.jpg"
+                            alt="Sunflower"
+                        >
+
+                       
+
+                    </div>
+
+                    <div class="work-info">
+
+                        <span>
+                            2025 · HANDMADE
+                        </span>
+
+                        <h3>
+                            Handmade using Satin Ribbon
+                        </h3>
+
+                    </div>
+
+                </article>
+
+
+                <article class="work-card">
+
+                    <div class="work-image">
+
+                        <img
+                            src="editing.jpg"
+                            alt="Editing"
+                        >
+
+                       
+
+                    </div>
+
+                    <div class="work-info">
+
+                        <span>
+                            2022 · HIGHLIGHT
+                        </span>
+
+                        <h3>
+                            Editing
+                        </h3>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BACKGROUND ================= -->
+
+    <section class="theater section" id="background">
+
+        <div class="container theater-grid">
+
+            <div>
+
+                <div class="section-label">
+                    | EDUCATIONAL BACKGROUND |
+                </div>
+
+                <h2>
+                    Bringing characters
+                    to life on stage.
+                </h2>
+
+            </div>
+
+
+            <div class="theater-text">
+
+                <p>
+        "I graduated SHS from the ICT strand at ACLC College of Mabalacat in 2024. My coursework focused on technical skills like computer programming, web development, and digital design. For our final project, we as a team created an online marketing campaign and a website for a local business. This gave me hands-on experience in social media management, data analysis, and tech troubleshooting."
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= OBJECTIVES ================= -->
+
+    <section class="reviews dark-section" id="objectives">
+
+        <div class="container">
+
+            <div class="section-label">
+                | PERSONAL OBJECTIVES|
+            </div>
+
+
+            <div class="review">
+
+                <div class="quote-mark">
+                    “
+                </div>
+
+                <blockquote>
+                   My personal objectives is to build a house that my future kids can feel and call it a HOME. a house that nobody will be scared if someone accidentally break a glasses. a house that instead of screaming, comparing and breaking things. it will be full of love, laughter, honesty and open hearts and minds
+                </blockquote>
+
+                <p>
+                    — Rai Rai
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact section" id="contact">
+
+        <div class="container contact-container">
+
+            <div>
+
+                <div class="section-label">
+                    | CONTACT ME |
+                </div>
+
+                <h2>
+                    Let's create something
+                    unforgettable.
+                </h2>
+
+            </div>
+
+
+            <a
+                href="mailto:raymartbarberanbaylonfswg.com"
+                class="button button-primary"
+            >
+
+          Email me
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+       <a href="#header" class="text-link">
+
+                    Back to Top
+
+                    <i class="fa-solid fa-arrow-up"></i>
+
+                </a>
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <p>
+                © 2026 Raymart Barberan Baylon. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+
+                <a href="https://www.instagram.com/kzxa.kei?igsh=MXY0ajc2MXJpODFuag==" target="_blank" rel="noopener noreferrer nofollow">
+
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.facebook.com/share/1BmWntStGy/"target="_blank" rel="noopener noreferrer nofollow">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@matchawithrai?_r=1&_t=ZS-98mzWzI07nR" target="_blank" rel="noopener noreferrer nofollow">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const menuButton =
+            document.querySelector(".menu-button");
+
+        const navigation =
+            document.querySelector(".navigation");
+
+
+        menuButton.addEventListener("click", () => {
+
+            navigation.classList.toggle("active");
+
+        });
+
+
+        // Close mobile menu after clicking a link
+
+        document.querySelectorAll(".navigation a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navigation.classList.remove("active");
+
+                });
+
+            });
+
+    </script>
+
+</body>
+</html>
